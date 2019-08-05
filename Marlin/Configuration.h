@@ -81,7 +81,7 @@
 // User-specified version info of this build to display in [Pronterface, etc] terminal window during
 // startup. Implementation of an idea by Prof Braino to inform user that any changes made to this
 // build by the user have been successfully uploaded into firmware.
-#define STRING_CONFIG_H_AUTHOR "(none, default config)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "Evgeny Yakimov" // Who made the changes.
 #define SHOW_BOOTSCREEN
 #define STRING_SPLASH_LINE1 SHORT_BUILD_VERSION // will be shown during bootup in line 1
 #define STRING_SPLASH_LINE2 WEBSITE_URL         // will be shown during bootup in line 2
@@ -136,7 +136,7 @@
 
 // Optional custom name for your RepStrap or other custom machine
 // Displayed in the LCD "Ready" message
-//#define CUSTOM_MACHINE_NAME "3D Printer"
+#define CUSTOM_MACHINE_NAME "Evgeny's Prusa i3 Achatz Edition"
 
 // Define this to set a unique identifier for this printer, (Used by some programs to differentiate between machines)
 // You can use an online service to generate a random UUID. (eg http://www.uuidgenerator.net/version4)
@@ -315,7 +315,7 @@
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
 #define TEMP_SENSOR_4 0
-#define TEMP_SENSOR_BED 0
+#define TEMP_SENSOR_BED 1
 #define TEMP_SENSOR_CHAMBER 0
 
 // Dummy thermistor constant temperature readings, for use with 998 and 999
@@ -363,7 +363,7 @@
 // PID Tuning Guide here: http://reprap.org/wiki/PID_Tuning
 
 // Comment the following line to disable PID and enable bang-bang.
-#define PIDTEMP
+/// #define PIDTEMP
 #define BANG_MAX 255     // Limits current to nozzle while in bang-bang mode; 255=full current
 #define PID_MAX BANG_MAX // Limits current to nozzle while PID is active (see PID_FUNCTIONAL_RANGE below); 255=full current
 #define PID_K1 0.95      // Smoothing factor within any PID loop
@@ -454,7 +454,7 @@
  * *** IT IS HIGHLY RECOMMENDED TO LEAVE THIS OPTION ENABLED! ***
  */
 #define PREVENT_COLD_EXTRUSION
-#define EXTRUDE_MINTEMP 170
+#define EXTRUDE_MINTEMP 150
 
 /**
  * Prevent a single extrusion longer than EXTRUDE_MAXLENGTH.
@@ -608,14 +608,14 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 4000, 500 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 4000, 944 }
 
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 300, 300, 5, 25 }
+#define DEFAULT_MAX_FEEDRATE          { 500, 500, 2, 25 }
 
 /**
  * Default Max Acceleration (change/s) change = mm/s
@@ -623,7 +623,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 100, 10000 }
+#define DEFAULT_MAX_ACCELERATION      { 9000, 9000, 100, 10000 }
 
 /**
  * Default Acceleration (change/s) change = mm/s
@@ -848,9 +848,9 @@
 // @section machine
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
-#define INVERT_X_DIR false
+#define INVERT_X_DIR true
 #define INVERT_Y_DIR true
-#define INVERT_Z_DIR false
+#define INVERT_Z_DIR true
 
 // @section extruder
 
@@ -879,8 +879,8 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 200
-#define Y_BED_SIZE 200
+#define X_BED_SIZE 190
+#define Y_BED_SIZE 150
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
@@ -1223,7 +1223,7 @@
 // M501 - reads parameters from EEPROM (if you need reset them after you changed them temporarily).
 // M502 - reverts to the default "factory settings".  You still need to store them in EEPROM afterwards if you want to.
 //
-//#define EEPROM_SETTINGS // Enable for M500 and M501 commands
+#define EEPROM_SETTINGS // Enable for M500 and M501 commands
 //#define DISABLE_M503    // Saves ~2700 bytes of PROGMEM. Disable for release!
 #define EEPROM_CHITCHAT   // Give feedback on EEPROM commands. Disable to save PROGMEM.
 
@@ -1426,7 +1426,7 @@
  * you must uncomment the following option or it won't work.
  *
  */
-//#define SDSUPPORT
+#define SDSUPPORT
 
 /**
  * SD CARD: SPI SPEED
@@ -1553,7 +1553,7 @@
 //
 // Note: Usually sold with a blue PCB.
 //
-//#define G3D_PANEL
+#define G3D_PANEL
 
 //
 // RigidBot Panel V1.0
